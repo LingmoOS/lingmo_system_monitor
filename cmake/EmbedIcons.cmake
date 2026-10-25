@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2026 Reion Wong <reionwong@gmail.com>
-// SPDX-FileCopyrightText: 2026 LingmoOS Contributors
+# SPDX-FileCopyrightText: 2026 LingmoOS Contributors
 # SPDX-License-Identifier: BSD-3-Clause
 
 # Writes a C++ source listing each SVG by its name without the suffix:
