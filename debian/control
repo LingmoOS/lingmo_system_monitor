@@ -12,7 +12,7 @@ Homepage: https://github.com/lingmoos/system-monitor
 
 Package: lingmo-system-monitor
 Architecture: any
-Depends: lingmo-sdk,
+Depends: lingmo-sdk-dev,
          ${misc:Depends},
          ${shlibs:Depends}
 Description: Lingmo OS System Monitor
