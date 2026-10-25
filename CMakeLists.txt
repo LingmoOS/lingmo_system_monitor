@@ -11,7 +11,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include(GNUInstallDirs)
 include(CTest)
 
-find_package(LingmoToolkit REQUIRED)
+find_package(LingmoSDK REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(ICU REQUIRED IMPORTED_TARGET icu-uc icu-i18n)
 
@@ -27,7 +27,7 @@ add_library(monitor-backend STATIC
     src/textutil.cpp
 )
 target_include_directories(monitor-backend PUBLIC src)
-target_link_libraries(monitor-backend PUBLIC Lingmo::ToolkitBase PRIVATE PkgConfig::ICU)
+target_link_libraries(monitor-backend PUBLIC Lingmo::SDKBase PRIVATE PkgConfig::ICU)
 
 # The glyphs, built in.
 file(GLOB SYSTEM_MONITOR_ICONS CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/icons/*.svg)
@@ -54,7 +54,7 @@ add_library(monitor-ui STATIC
     ${SYSTEM_MONITOR_EMBEDDED}
 )
 target_include_directories(monitor-ui PUBLIC src src/views)
-target_link_libraries(monitor-ui PUBLIC monitor-backend Lingmo::Toolkit)
+target_link_libraries(monitor-ui PUBLIC monitor-backend Lingmo::SDK)
 
 add_executable(${PROJECT_NAME} src/main.cpp)
 target_compile_definitions(${PROJECT_NAME} PRIVATE SYSTEM_MONITOR_VERSION="${PROJECT_VERSION}")
